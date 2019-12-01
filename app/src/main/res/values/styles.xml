@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style parent="ThemeOverlay.AppCompat.Dark.ActionBar" name="MyDarkToolbarStyle">
+
+    <item name="android:colorBackground">#ffffff</item>
+
+    <item name="android:textColor">#585858</item>
+
+</style>
+
+    <style name="NavigationViewStyle">
+    <item name="android:textSize">16sp</item>
+    <!-- menu item text size-->
+    <item name="android:listPreferredItemHeightSmall">30dp</item>
+    <!-- menu item height-->
+</style>
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+</resources>

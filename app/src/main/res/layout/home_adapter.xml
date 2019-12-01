@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_marginBottom="5dp"
+    android:layout_height="wrap_content">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:maxHeight="250dp"
+            android:scaleType="fitXY"
+            android:id="@+id/bg"
+            android:src="@drawable/image1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="20dp"
+            android:weightSum="1"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Top Star Salon"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:fadingEdgeLength="10dp"
+                    android:elevation="10dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <RatingBar android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/total_rating"
+                    android:layout_gravity="center_vertical"
+                    android:numStars="5"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:rating="5"
+                    android:elevation="10dp"
+                    android:isIndicator="true"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(45)"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:id="@+id/profile_image"
+                    app:border_width="0dp"
+                    app:border_color="#fff"
+                    android:src="@drawable/profile"
+                    android:layout_centerInParent="true"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="Mia Brown"
+                    android:textSize="16sp"
+                   android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DAMANA"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="22photos"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:gravity="right"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="boys spy cut rs.32.00"
+                        android:textAllCaps="true"
+                        android:layout_gravity="bottom|right"
+                        android:gravity="right"
+                        android:padding="3dp"
+                        android:layout_marginBottom="3dp"
+                        android:background="@drawable/tv_bg"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="10dp"
+    android:weightSum="1"
+    android:visibility="gone"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TODAY"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textAllCaps="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.00pm"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/home_tv_bg"
+            android:padding="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.00pm"
+            android:textSize="12sp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/home_tv_bg"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FRIDAY"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textAllCaps="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.00pm"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:textAllCaps="true"
+            android:textSize="12sp"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/home_tv_bg"
+            android:padding="5dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.00pm"
+            android:textSize="12sp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:textAllCaps="true"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/home_tv_bg"
+            android:padding="5dp"/>
+    </LinearLayout>
+</LinearLayout>
+
+</LinearLayout>

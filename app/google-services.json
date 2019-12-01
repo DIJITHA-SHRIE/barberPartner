@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "941308828105",
+    "firebase_url": "https://kagamipartner.firebaseio.com",
+    "project_id": "kagamipartner",
+    "storage_bucket": "kagamipartner.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941308828105:android:6da443dc9b19542e287018",
+        "android_client_info": {
+          "package_name": "com.hair_beauty.partner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941308828105-i14sjtp84uop15khhtf7fvcvgaci6hq5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hair_beauty.partner",
+            "certificate_hash": "295f3c01e2c497f9ea6a64229b1c178344da0236"
+          }
+        },
+        {
+          "client_id": "941308828105-bpc5n79f7rq4dc4c208mvu4uomagjsje.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_OcsSlnkzc0t3UoQQ04WJDjn7HYRVIrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941308828105-bpc5n79f7rq4dc4c208mvu4uomagjsje.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

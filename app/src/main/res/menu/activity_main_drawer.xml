@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/text1">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:icon="@drawable/home_icon"/>
+    </group>
+
+
+    <group android:id="@+id/text2">
+        <item
+            android:id="@+id/search"
+            android:title="Search"
+            android:icon="@drawable/search1"/>
+    </group>
+
+    <group android:id="@+id/text3">
+        <item
+            android:id="@+id/my_appointment"
+            android:title="My Appointments"
+            android:icon="@drawable/callender_icon"/>
+    </group>
+
+  <!--  <group android:id="@+id/text4">
+        <item
+            android:id="@+id/my_accounts"
+            android:title="My Account"
+            android:icon="@drawable/account"/>
+    </group>-->
+
+    <group android:id="@+id/text5">
+        <item
+            android:id="@+id/notification"
+            android:title="Notifications bell"
+            android:icon="@drawable/bell"
+            android:visible="false"/>
+    </group>
+
+    <group android:id="@+id/text6">
+        <item
+            android:id="@+id/offers"
+            android:title="My Offers"
+            android:icon="@drawable/gift1"/>
+    </group>
+
+    <group android:id="@+id/text7">
+        <item
+            android:id="@+id/services"
+            android:icon="@drawable/service_icon"
+            android:title="My Services" />
+    </group>
+    <group android:id="@+id/text8">
+        <item
+            android:id="@+id/refer_earn"
+            android:title="Refer &amp; Earn"
+            android:icon="@drawable/referandearn1"/>
+    </group>
+    <group android:id="@+id/text9">
+        <item
+            android:id="@+id/setup_business"
+            android:title="SetUp My Business"
+            android:icon="@drawable/setupmybusiness1"/>
+    </group>
+    <group android:id="@+id/text11">
+        <item
+            android:id="@+id/settings"
+            android:title="Settings"
+            android:icon="@drawable/service_icon"/>
+    </group>
+    <group android:id="@+id/text16">
+        <item
+            android:id="@+id/logout"
+            android:title="Sign Out"
+            android:icon="@drawable/signout"/>
+    </group>
+    <!--<group android:id="@+id/text10">
+        <item
+            android:id="@+id/about_us"
+            android:title="About Us"
+            android:icon="@drawable/helpcenter1"/>
+
+    </group>
+    <group android:id="@+id/text11">
+        <item
+            android:id="@+id/Support"
+            android:title="Support"
+            android:icon="@drawable/support1"/>
+    </group>
+    <group android:id="@+id/text12">
+        <item
+            android:id="@+id/career"
+            android:title="Careers"
+            android:icon="@drawable/careers1"/>
+    </group>
+    <group android:id="@+id/text13">
+        <item
+            android:id="@+id/terms"
+            android:title="Terms"
+            android:icon="@drawable/terms1"/>
+    </group>
+
+    <group android:id="@+id/text14">
+        <item
+            android:id="@+id/privacy"
+            android:title="Privacy"
+            android:icon="@drawable/privacy"/>
+    </group>
+    <group android:id="@+id/text17">
+        <item
+            android:id="@+id/cancel"
+            android:title="Cancelation Policy"
+            android:icon="@drawable/privacy"/>
+    </group>
+    <group android:id="@+id/text15">
+        <item
+            android:id="@+id/faq"
+            android:title="FAQ"
+            android:icon="@drawable/terms1"/>
+    </group>
+
+    <group android:id="@+id/text16">
+        <item
+            android:id="@+id/logout"
+            android:title="Sign Out"
+            android:icon="@drawable/signout"/>
+    </group>-->
+
+</menu>
