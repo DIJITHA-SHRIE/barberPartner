@@ -7,8 +7,9 @@ public class Myservices_Mod implements Parcelable {
     String pac_name,cat_name,price,times;
     String name,id,start_time;
     String total_price;
+    String status,services;
 
-    protected Myservices_Mod(Parcel in) {
+    public Myservices_Mod(Parcel in) {
         pac_name = in.readString();
         cat_name = in.readString();
         price = in.readString();
@@ -17,6 +18,8 @@ public class Myservices_Mod implements Parcelable {
         id = in.readString();
         start_time = in.readString();
         total_price = in.readString();
+        status = in.readString();
+        services = in.readString();
     }
 
     public static final Creator<Myservices_Mod> CREATOR = new Creator<Myservices_Mod>() {
@@ -95,21 +98,20 @@ public class Myservices_Mod implements Parcelable {
         this.total_price = total_price;
     }
 
-    public Myservices_Mod(String pac_name, String cat_name, String price, String times) {
-        this.pac_name = pac_name;
-        this.cat_name = cat_name;
-        this.price = price;
-        this.times = times;
+    public String getStatus() {
+        return status;
     }
 
-    public Myservices_Mod(String total_price) {
-        this.total_price = total_price;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public Myservices_Mod(String name, String id, String start_time) {
-        this.name = name;
-        this.id = id;
-        this.start_time = start_time;
+    public String getServices() {
+        return services;
+    }
+
+    public void setServices(String services) {
+        this.services = services;
     }
 
     @Override
@@ -118,14 +120,42 @@ public class Myservices_Mod implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(pac_name);
-        dest.writeString(cat_name);
-        dest.writeString(price);
-        dest.writeString(times);
-        dest.writeString(name);
-        dest.writeString(id);
-        dest.writeString(start_time);
-        dest.writeString(total_price);
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(pac_name);
+        parcel.writeString(cat_name);
+        parcel.writeString(price);
+        parcel.writeString(times);
+        parcel.writeString(name);
+        parcel.writeString(id);
+        parcel.writeString(start_time);
+        parcel.writeString(total_price);
+        parcel.writeString(status);
+        parcel.writeString(services);
     }
+
+    public Myservices_Mod(String name, String id,String services,String status, String start_time) {
+        this.name = name;
+        this.id = id;
+        this.start_time = start_time;
+        this.services=services;
+        this.status = status;
+    }
+
+    public Myservices_Mod(String pac_name, String cat_name, String price, String times) {
+        this.pac_name = pac_name;
+        this.cat_name = cat_name;
+        this.price = price;
+        this.times = times;
+    }
+    public Myservices_Mod(String name, String id, String start_time) {
+        this.name = name;
+        this.id = id;
+        this.start_time = start_time;
+    }
+    public Myservices_Mod(String total_price) {
+        this.total_price = total_price;
+    }
+
+
+
 }

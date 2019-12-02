@@ -20,6 +20,7 @@ public class ServerLinks {
     public static final String privacy=API_LINK+"m_privacy_policy.php";
     public static final String cancellation=API_LINK+"m_cancelation_policy.php";
     public static final String faq=API_LINK+"m_faq.php";
+    public static final String SERVICE_ACTION=API_LINK+"m_accept_reject_service.php";
 
 ///http://www.door2dream.com/demo/barberapp/m_all_api.php
 

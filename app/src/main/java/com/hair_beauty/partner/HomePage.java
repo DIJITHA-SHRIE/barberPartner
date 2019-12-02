@@ -67,6 +67,7 @@ public class HomePage extends Fragment {
     ArrayList<Myservices_Mod> todayArray = new ArrayList<>();
     ArrayList<Myservices_Mod> total_appt_array = new ArrayList<>();
     ArrayList<Myservices_Mod> incomeArray = new ArrayList<>();
+    ArrayList<Myservices_Mod> today_incomeArray = new ArrayList<>();
     String getsaloon_id;
 
     @Override
@@ -117,17 +118,21 @@ public class HomePage extends Fragment {
                     JSONObject jsonObject = new JSONObject(response);
                     String message = jsonObject.getString("message");
                     if (message.equals("1")) {
-                        JSONObject jsonObj_data = jsonObject.getJSONObject("data");
-                        String user_name = jsonObj_data.getString("user_name");
-                        String user_start_time = jsonObj_data.getString("start_time");
-                        JSONArray service_json_array = jsonObj_data.getJSONArray("service_name");
-                        today_tot_Appt.setText(String.valueOf(service_json_array.length()));
-                        Log.i("service_json_array",service_json_array.toString());
+                        JSONArray jsonArray = jsonObject.getJSONArray("data");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject row = jsonArray.getJSONObject(i);
+                            String user_name = row.getString("user_name");
+                            String user_start_time = row.getString("start_time");
+                            String user_status = row.getString("status");
+                            String user_id = row.getString("id");
+                            JSONArray service_json_array = row.getJSONArray("service_name");
+                            today_tot_Appt.setText(String.valueOf(service_json_array.length()));
+                            Log.i("service_json_array", service_json_array.toString());
 
-                            todayArray.add(new Myservices_Mod(user_name,service_json_array.toString()
+                            todayArray.add(new Myservices_Mod(user_name, user_id, service_json_array.toString(), user_status
                                     , user_start_time));
 
-                    }
+                        } }
 
                     adapter = new TodayAppt_adp(todayArray,getActivity());
                     LinearLayoutManager lm = new LinearLayoutManager(getActivity());
@@ -172,18 +177,38 @@ public class HomePage extends Fragment {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ServerLinks.Total_APPOINTMENT, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.i("Response_today", response);
+                Log.i("Response_total", response);
+                int services_count = 0;
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     String message = jsonObject.getString("message");
                     if (message.equals("1")) {
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
-                        totalAppt.setText(String.valueOf(jsonArray.length()));
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject row = jsonArray.getJSONObject(i);
-                            total_appt_array.add(new Myservices_Mod(row.getString("name"),
-                                    row.getString("style_name"), row.getString("start_time")));
+                            String user_name = row.getString("user_name");
+                            String user_start_time = row.getString("start_time");
+                            String user_status = row.getString("status");
+                            String user_id = row.getString("id");
+                            JSONArray service_json_array = row.getJSONArray("service_name");
+                            services_count = services_count+service_json_array.length();
+
+                            Log.i("service_json_array", service_json_array.toString());
+
+                            total_appt_array.add(new Myservices_Mod(user_name, user_id, service_json_array.toString(), user_status
+                                    , user_start_time));
+
+
                         }
+
+
+                        totalAppt.setText(String.valueOf(services_count));
+
+
+
+
+
+
                     }
 
                     adapter = new TodayAppt_adp(total_appt_array,getActivity());
@@ -238,12 +263,13 @@ public class HomePage extends Fragment {
                         JSONArray jsonArray = jsonObject.getJSONArray("data");
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject row = jsonArray.getJSONObject(i);
-                            incomeArray.add(new Myservices_Mod(row.getString("total_price")));
+                            today_incomeArray.add(new Myservices_Mod(row.getString("total_price")));
                         }
                     }
+                    Log.i("TodayIncomeArraySize",today_incomeArray.size()+"");
                         Double totalPrice=0.0;
-                    for(int i = 0; i<incomeArray.size();i++){
-                        Double price = Double.valueOf(incomeArray.get(i).getTotal_price());
+                    for(int i = 0; i<today_incomeArray.size();i++){
+                        Double price = Double.valueOf(today_incomeArray.get(i).getTotal_price());
                         totalPrice=totalPrice+price;
                     }
                     totalPrice_t.setText("INR "+String.valueOf(totalPrice));
@@ -272,7 +298,7 @@ public class HomePage extends Fragment {
 
                 Log.i("saloon_id", getsaloon_id);
                 params.put("owned_by", getsaloon_id);
-                params.put("status", "1");//B7982
+                params.put("status", "1");//B7982    // 3 for paid
                 //  params.put("password",userPassword.getText().toString()); //dipak
                 return params;
             }
@@ -297,6 +323,7 @@ public class HomePage extends Fragment {
                             incomeArray.add(new Myservices_Mod(row.getString("total_price")));
                         }
                     }
+                    Log.i("TotalIncomeArraySize",incomeArray.size()+"");
                     Double totalPrice=0.0;
                     for(int i = 0; i<incomeArray.size();i++){
                         Double price = Double.valueOf(incomeArray.get(i).getTotal_price());
